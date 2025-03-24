@@ -1,9 +1,11 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { NavBarItem } from '../types';
+import { NavBarListItemComponent } from './nav-bar-list-item';
 
 @Component({
   selector: 'app-nav-bar-start',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
+  imports: [NavBarListItemComponent],
   template: `
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -26,11 +28,15 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
       >
-        <li><a>Demos</a></li>
+        @for (link of links(); track $index) {
+          <app-nav-bar-list-item [link]="link" />
+        }
       </ul>
     </div>
     <a class="btn btn-ghost text-xl">Applied Angular</a>
   `,
   styles: ``,
 })
-export class NavBarStartComponent {}
+export class NavBarStartComponent {
+  links = input.required<NavBarItem[]>();
+}

@@ -1,18 +1,20 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { NavBarItem } from '../types';
+import { NavBarListItemComponent } from './nav-bar-list-item';
 
 @Component({
   selector: 'app-nav-bar-center',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
+  imports: [NavBarListItemComponent],
   template: `
     <ul class="menu menu-horizontal px-1">
       @for (link of links(); track $index) {
-        <li>{{ link.label }}</li>
+        <app-nav-bar-list-item [link]="link" />
       }
     </ul>
   `,
   styles: ``,
 })
 export class NavBarCenterComponent {
-  links = input.required<{ href: string; label: string }[]>();
+  links = input.required<NavBarItem[]>();
 }
