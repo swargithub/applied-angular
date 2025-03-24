@@ -1,1 +1,4 @@
-export type NavBarItem = { href: string; label: string };
+export type NavBarItem = {
+  href: string;
+  label: string;
+};
