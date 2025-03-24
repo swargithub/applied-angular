@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { DemoComponent } from './components/demo1/demo1';
+import { NavBarComponent } from './components/nav-bar/nav-bar';
 
 @Component({
   selector: 'app-root',
   template: `
-    <main class="container mx-auto">
-      <app-demo-1 /><app-demo-1 /><app-demo-1 /><app-demo-1 /><app-demo-1 /><app-demo-1 /><app-demo-1 /><app-demo-1 /><app-demo-1 /><app-demo-1 />
-    </main>
+    <app-nav-bar />
+    <main class="container mx-auto"></main>
   `,
   styles: [],
-  imports: [DemoComponent],
+  imports: [NavBarComponent],
 })
 export class AppComponent {}
