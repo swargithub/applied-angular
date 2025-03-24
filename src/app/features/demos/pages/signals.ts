@@ -21,6 +21,20 @@ import {
     } @else {
       <p>Click the buttons!</p>
     }
+
+    <div>
+      @switch (indicator()) {
+        @case ('even') {
+          <span class="badge badge-success">Even!</span>
+        }
+        @case ('odd') {
+          <span class="badge badge-info">Odd!</span>
+        }
+        @case ('nada') {
+          <span class="badge badge-info">Good Luck!!</span>
+        }
+      }
+    </div>
   `,
   styles: ``,
 })
@@ -35,4 +49,16 @@ export class SignalsDemoComponent {
   increment() {
     this.current.update((c) => c + 1);
   }
+
+  indicator = computed(() => {
+    const current = this.current();
+    if (current === 0) {
+      return 'nada';
+    }
+    if (current % 2 === 0) {
+      return 'even';
+    } else {
+      return 'odd';
+    }
+  });
 }
