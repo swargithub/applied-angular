@@ -25,8 +25,12 @@ import { NavBarItem } from './types';
 export class NavBarComponent {
   navigationLinks = signal<NavBarItem[]>([
     {
-      href: '',
+      href: 'dashboard',
       label: 'Home',
+    },
+    {
+      href: 'about',
+      label: 'About',
     },
     {
       href: 'demos',
