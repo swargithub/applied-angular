@@ -4,16 +4,17 @@ import {
   signal,
   computed,
 } from '@angular/core';
+import { OddEvenIndicatorComponent } from '../components/odd-even-indicator';
 
 @Component({
   selector: 'app-demos-signals',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
+  imports: [OddEvenIndicatorComponent],
   template: `
     <p>A Basic Signals Example</p>
-    <div>
+    <div class="pb-4">
       <button (click)="decrement()" class="btn btn-error">-</button>
-      <span class="m-4 text-lg">{{ current() }}</span>
+      <span class="m-4 text-md font-bold">{{ current() }}</span>
       <button (click)="increment()" class="btn btn-success">+</button>
     </div>
     @if (showReset()) {
@@ -22,18 +23,8 @@ import {
       <p>Click the buttons!</p>
     }
 
-    <div>
-      @switch (indicator()) {
-        @case ('even') {
-          <span class="badge badge-success">Even!</span>
-        }
-        @case ('odd') {
-          <span class="badge badge-info">Odd!</span>
-        }
-        @case ('nada') {
-          <span class="badge badge-info">Good Luck!!</span>
-        }
-      }
+    <div class="p-4">
+      <app-odd-even-indicator [current]="current()" />
     </div>
   `,
   styles: ``,
@@ -49,16 +40,4 @@ export class SignalsDemoComponent {
   increment() {
     this.current.update((c) => c + 1);
   }
-
-  indicator = computed(() => {
-    const current = this.current();
-    if (current === 0) {
-      return 'nada';
-    }
-    if (current % 2 === 0) {
-      return 'even';
-    } else {
-      return 'odd';
-    }
-  });
 }
