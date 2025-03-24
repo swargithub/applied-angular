@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar-center',
@@ -6,9 +6,13 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   imports: [],
   template: `
     <ul class="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
+      @for (link of links(); track $index) {
+        <li>{{ link.label }}</li>
+      }
     </ul>
   `,
   styles: ``,
 })
-export class NavBarCenterComponent {}
+export class NavBarCenterComponent {
+  links = input.required<{ href: string; label: string }[]>();
+}

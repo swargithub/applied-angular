@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
 import { NavBarStartComponent } from './components/nav-bar-start';
 import { NavBarCenterComponent } from './components/nav-bar-center';
 import { NavBarEndComponent } from './components/nav-bar-end';
@@ -13,7 +13,7 @@ import { NavBarEndComponent } from './components/nav-bar-end';
       <app-nav-bar-start />
     </div>
     <div class="navbar-center hidden lg:flex">
-      <app-nav-bar-center />
+      <app-nav-bar-center [links]="navigationLinks()" />
     </div>
     <div class="navbar-end">
       <app-nav-bar-end />
@@ -21,4 +21,16 @@ import { NavBarEndComponent } from './components/nav-bar-end';
   </div>`,
   styles: ``,
 })
-export class NavBarComponent {}
+export class NavBarComponent {
+  favoriteFood = signal('Burritos');
+  navigationLinks = signal([
+    {
+      href: '',
+      label: 'Home',
+    },
+    {
+      href: 'demos',
+      label: 'Demos',
+    },
+  ]);
+}
