@@ -9,6 +9,7 @@ import { NavBarEndComponent } from './components/nav-bar-end';
   imports: [NavBarStartComponent, NavBarCenterComponent, NavBarEndComponent],
   template: ` <div class="navbar bg-base-100 shadow-sm">
     <div class="navbar-start">
+      <!-- This was refactored -->
       <app-nav-bar-start />
     </div>
     <div class="navbar-center hidden lg:flex">
