@@ -4,10 +4,12 @@ import {
   signalStore,
   withHooks,
   withMethods,
+  withProps,
   withState,
 } from '@ngrx/signals';
 
-type AvailableThemes = 'synthwave' | 'cyberpunk' | 'aqua';
+const themes = ['synthwave', 'aqua', 'halloween'] as const;
+type AvailableThemes = (typeof themes)[number];
 
 // Higher-Order Function
 // a function that returns a function and or takes functions as an argument
@@ -15,6 +17,9 @@ export const PrefsStore = signalStore(
   withState({
     theme: 'synthwave' as AvailableThemes,
   }),
+  withProps(() => ({
+    availableThemes: themes,
+  })),
   withMethods((store) => {
     return {
       setTheme: (theme: AvailableThemes) => patchState(store, { theme }),

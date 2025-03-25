@@ -1,37 +1,24 @@
+import { TitleCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PrefsStore } from '../../../services/prefs.store';
 
 @Component({
   selector: 'app-profile-theme',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
-  providers: [PrefsStore],
+  imports: [TitleCasePipe],
+  providers: [],
   template: `
     <div class="join">
-      <button
-        [disabled]="store.theme() === 'synthwave'"
-        class="join-item"
-        class="btn btn-primary"
-        (click)="store.setTheme('synthwave')"
-      >
-        Synthwave
-      </button>
-      <button
-        [disabled]="store.theme() === 'cyberpunk'"
-        class="join-item"
-        class="btn btn-primary"
-        (click)="store.setTheme('cyberpunk')"
-      >
-        Cyberpunk
-      </button>
-      <button
-        [disabled]="store.theme() === 'aqua'"
-        class="join-item"
-        class="btn btn-primary"
-        (click)="store.setTheme('aqua')"
-      >
-        Aqua
-      </button>
+      @for (theme of store.availableThemes; track theme) {
+        <button
+          [disabled]="store.theme() === theme"
+          class="join-item"
+          class="btn btn-primary"
+          (click)="store.setTheme(theme)"
+        >
+          {{ theme | titlecase }}
+        </button>
+      }
     </div>
   `,
   styles: ``,
