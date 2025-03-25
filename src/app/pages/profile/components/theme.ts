@@ -43,9 +43,19 @@ export class ThemeComponent {
   selectedTheme = signal<'synthwave' | 'cyberpunk' | 'aqua'>('synthwave');
 
   constructor() {
+    const savedValue = localStorage.getItem('theme') as
+      | 'synthwave'
+      | 'cyberpunk'
+      | 'aqua'
+      | null;
+    if (savedValue) {
+      this.selectedTheme.set(savedValue);
+    }
+
     effect(() => {
       const theme = this.selectedTheme();
       document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
     });
   }
 }
