@@ -62,7 +62,7 @@ The `Counter` feature will have a new page that provides the user interface for 
 ```html
 <div>
   <button class="btn btn-primary">-</button>
-  <span data-testid="current">0</span>
+  <span>0</span>
   <button class="btn btn-primary">+</button>
 </div>
 ```
@@ -112,9 +112,9 @@ Here are the rules:
 4. If none of those are true, show nothing.
 5. Is zero evenly divisible by 3, or 5? Too mathy for me. For our purposes, a value of zero should not return a fizzbuzz value.
 
-In the UI component, add an element with a `data-testid="fizzBuzz"`.
-
 Write the code in your component to display in this element the values `Fizz`, `Buzz`, `FizzBuzz` or nothing, based on the rules as the user increments and decrements the counter.
+
+> **Note**: You _may_ create a nested child component for this, like we did for the _odd/even_ thing yesterday. Up to you.
 
 ### Check Your Work
 
@@ -138,7 +138,7 @@ When they change their preference on the `prefs` component and return to the `ui
 
 ### Some Hints
 
-This would be a good place for a service. I reccommend a service implemented as a SignalStore.
+This would be a good place for a service. I recommend a service implemented as a SignalStore.
 
 Move the logic and signals from the `ui` component into the signal store.
 
