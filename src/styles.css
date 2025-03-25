@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: synthwave;
+  themes: synthwave, cyberpunk, aqua;
 }
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
