@@ -24,6 +24,13 @@ export const routes: Routes = [
     component: ProfileComponent,
   },
   {
+    path: 'counter',
+    loadChildren: () =>
+      import('./features/counter-lab/counter.routes').then(
+        (r) => r.COUNTER_ROUTES,
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'dashboard',
   },

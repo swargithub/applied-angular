@@ -36,5 +36,9 @@ export class NavBarComponent {
       href: 'demos',
       label: 'Demos',
     },
+    {
+      href: 'counter',
+      label: 'Counter Lab',
+    },
   ]);
 }
