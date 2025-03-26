@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, input } from '@angular/core';
 
 @Component({
-  selector: 'app-profile-card',
+  selector: 'app-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
   template: ` <div class="card bg-base-300 w-fit shadow-sm">

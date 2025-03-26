@@ -28,7 +28,7 @@
       "version": 30,
       "versionNonce": 651510275,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742994720511,
       "link": null,
       "locked": false,
@@ -73,7 +73,7 @@
       "version": 36,
       "versionNonce": 894080739,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742994726202,
       "link": null,
       "locked": false,
@@ -116,7 +116,7 @@
       "version": 6,
       "versionNonce": 952685933,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742994729889,
       "link": null,
       "locked": false,
@@ -153,7 +153,7 @@
       "version": 81,
       "versionNonce": 1731575213,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1742994751105,
       "link": null,
       "locked": false,
@@ -164,6 +164,961 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Velocity / Joy / Mental Health",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "QskU-By-qPIjRNP6zbWi8",
+      "type": "freedraw",
+      "x": 497.48105642329904,
+      "y": 163.68304433731362,
+      "width": 752.9999999999999,
+      "height": 335,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a4",
+      "roundness": null,
+      "seed": 2059831631,
+      "version": 128,
+      "versionNonce": 631148879,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742997835871,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          18,
+          0
+        ],
+        [
+          22,
+          0
+        ],
+        [
+          23,
+          0
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          39,
+          2
+        ],
+        [
+          41,
+          3
+        ],
+        [
+          43,
+          3
+        ],
+        [
+          46,
+          3
+        ],
+        [
+          49,
+          4
+        ],
+        [
+          53,
+          5
+        ],
+        [
+          54,
+          5
+        ],
+        [
+          63,
+          6
+        ],
+        [
+          68,
+          7
+        ],
+        [
+          74,
+          7
+        ],
+        [
+          91,
+          8
+        ],
+        [
+          101,
+          9
+        ],
+        [
+          106,
+          9
+        ],
+        [
+          132,
+          13
+        ],
+        [
+          142,
+          15
+        ],
+        [
+          149,
+          17
+        ],
+        [
+          154,
+          17
+        ],
+        [
+          157,
+          17
+        ],
+        [
+          158,
+          17
+        ],
+        [
+          168,
+          17
+        ],
+        [
+          171,
+          18
+        ],
+        [
+          193,
+          21
+        ],
+        [
+          200,
+          21
+        ],
+        [
+          214,
+          22
+        ],
+        [
+          218,
+          22
+        ],
+        [
+          244,
+          28
+        ],
+        [
+          249,
+          28
+        ],
+        [
+          266,
+          33
+        ],
+        [
+          272,
+          35
+        ],
+        [
+          295,
+          54
+        ],
+        [
+          310,
+          64
+        ],
+        [
+          314,
+          66
+        ],
+        [
+          319,
+          71
+        ],
+        [
+          321,
+          73
+        ],
+        [
+          327,
+          78
+        ],
+        [
+          335,
+          84
+        ],
+        [
+          339,
+          88
+        ],
+        [
+          347,
+          95
+        ],
+        [
+          349,
+          98
+        ],
+        [
+          355,
+          103
+        ],
+        [
+          360,
+          108
+        ],
+        [
+          367,
+          115
+        ],
+        [
+          373,
+          124
+        ],
+        [
+          377,
+          129
+        ],
+        [
+          378,
+          130
+        ],
+        [
+          382,
+          139
+        ],
+        [
+          392,
+          157
+        ],
+        [
+          396,
+          162
+        ],
+        [
+          398,
+          166
+        ],
+        [
+          404,
+          176
+        ],
+        [
+          410,
+          183
+        ],
+        [
+          416,
+          193
+        ],
+        [
+          417,
+          196
+        ],
+        [
+          420,
+          201
+        ],
+        [
+          424,
+          210
+        ],
+        [
+          428,
+          215
+        ],
+        [
+          431,
+          223
+        ],
+        [
+          434,
+          226
+        ],
+        [
+          437,
+          230
+        ],
+        [
+          438,
+          231
+        ],
+        [
+          444,
+          238
+        ],
+        [
+          446,
+          241
+        ],
+        [
+          448,
+          244
+        ],
+        [
+          458,
+          258
+        ],
+        [
+          459,
+          259
+        ],
+        [
+          461,
+          261
+        ],
+        [
+          463,
+          263
+        ],
+        [
+          464,
+          265
+        ],
+        [
+          466,
+          267
+        ],
+        [
+          467,
+          268
+        ],
+        [
+          476,
+          281
+        ],
+        [
+          480,
+          285
+        ],
+        [
+          487,
+          292
+        ],
+        [
+          488,
+          292
+        ],
+        [
+          493,
+          296
+        ],
+        [
+          494,
+          296
+        ],
+        [
+          498,
+          298
+        ],
+        [
+          506,
+          304
+        ],
+        [
+          518,
+          309
+        ],
+        [
+          521,
+          309
+        ],
+        [
+          524,
+          310
+        ],
+        [
+          526,
+          310
+        ],
+        [
+          538.9999999999999,
+          318
+        ],
+        [
+          541.9999999999999,
+          319
+        ],
+        [
+          548.9999999999999,
+          323
+        ],
+        [
+          554.9999999999999,
+          325
+        ],
+        [
+          557.9999999999999,
+          326
+        ],
+        [
+          563.9999999999999,
+          327
+        ],
+        [
+          583.9999999999999,
+          327
+        ],
+        [
+          589.9999999999999,
+          327
+        ],
+        [
+          593.9999999999999,
+          327
+        ],
+        [
+          611.9999999999999,
+          327
+        ],
+        [
+          617.9999999999999,
+          327
+        ],
+        [
+          628.9999999999999,
+          327
+        ],
+        [
+          638.9999999999999,
+          327
+        ],
+        [
+          641.9999999999999,
+          327
+        ],
+        [
+          649.9999999999999,
+          327
+        ],
+        [
+          665.9999999999999,
+          329
+        ],
+        [
+          673.9999999999999,
+          329
+        ],
+        [
+          688.9999999999999,
+          329
+        ],
+        [
+          703.9999999999999,
+          334
+        ],
+        [
+          708.9999999999999,
+          334
+        ],
+        [
+          718.9999999999999,
+          335
+        ],
+        [
+          724.9999999999999,
+          335
+        ],
+        [
+          726.9999999999999,
+          335
+        ],
+        [
+          727.9999999999999,
+          335
+        ],
+        [
+          730.9999999999999,
+          335
+        ],
+        [
+          733.9999999999999,
+          335
+        ],
+        [
+          739.9999999999999,
+          335
+        ],
+        [
+          743.9999999999999,
+          334
+        ],
+        [
+          750.9999999999999,
+          334
+        ],
+        [
+          751.9999999999999,
+          334
+        ],
+        [
+          752.9999999999999,
+          334
+        ],
+        [
+          752.9999999999999,
+          334
+        ]
+      ],
+      "pressures": [],
+      "simulatePressure": true,
+      "lastCommittedPoint": [
+        752.9999999999999,
+        334
+      ]
+    },
+    {
+      "id": "1ap8iZjQmAXyAovWcBkeA",
+      "type": "arrow",
+      "x": 1320.481056423299,
+      "y": 179.68304433731362,
+      "width": 7,
+      "height": 360,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a5",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 980984577,
+      "version": 25,
+      "versionNonce": 1579469583,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742997888264,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          7,
+          360
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": false
+    },
+    {
+      "id": "vq-o6yHh_YJqw0i-WtBTT",
+      "type": "text",
+      "x": 1355.481056423299,
+      "y": 503.6830443373136,
+      "width": 490.25970458984375,
+      "height": 50,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a6",
+      "roundness": null,
+      "seed": 1227526991,
+      "version": 100,
+      "versionNonce": 939036079,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742997911225,
+      "link": null,
+      "locked": false,
+      "text": "Increase in slow pipelines (testing)\nDecrease in our ability to push to code customers",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Increase in slow pipelines (testing)\nDecrease in our ability to push to code customers",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "X7VzTf22qTiQ_6htuckzZ",
+      "type": "rectangle",
+      "x": 482.48105642329904,
+      "y": 144.68304433731362,
+      "width": 198,
+      "height": 432,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a7",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 995954721,
+      "version": 25,
+      "versionNonce": 907341807,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742998025728,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "lwownRMEHvr2izIxrG5MP",
+      "type": "text",
+      "x": 665.481056423299,
+      "y": 674.6830443373136,
+      "width": 169.33987426757812,
+      "height": 25,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a8",
+      "roundness": null,
+      "seed": 2000617519,
+      "version": 19,
+      "versionNonce": 1678492271,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742998198372,
+      "link": null,
+      "locked": false,
+      "text": "\"Micro frontends\"",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "\"Micro frontends\"",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "5R-HEbi00QYDKi3tZmglz",
+      "type": "rectangle",
+      "x": 765.481056423299,
+      "y": 738.6830443373136,
+      "width": 397.9999999999999,
+      "height": 192,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a9",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 2010740705,
+      "version": 23,
+      "versionNonce": 1353719311,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742998279278,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "8DDdVo1I3ZsePofNm8SXN",
+      "type": "rectangle",
+      "x": 790.481056423299,
+      "y": 756.6830443373136,
+      "width": 94,
+      "height": 68,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aA",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 332603585,
+      "version": 22,
+      "versionNonce": 519899087,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742998284357,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "ns4lR4htApa-HUaYUji2k",
+      "type": "rectangle",
+      "x": 907.481056423299,
+      "y": 759.6830443373136,
+      "width": 94,
+      "height": 68,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aB",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1585977775,
+      "version": 48,
+      "versionNonce": 1088609473,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742998293575,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "aoIWJ2vNEZi1725LjXHNp",
+      "type": "rectangle",
+      "x": 1045.481056423299,
+      "y": 748.6830443373136,
+      "width": 94,
+      "height": 68,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aC",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1681884207,
+      "version": 61,
+      "versionNonce": 974531439,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742998294451,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "uc3SWMYD_o79ey7G8btQ9",
+      "type": "text",
+      "x": 482.48105642329904,
+      "y": 1139.6830443373137,
+      "width": 1169.4991455078125,
+      "height": 75,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aD",
+      "roundness": null,
+      "seed": 120640065,
+      "version": 152,
+      "versionNonce": 686728033,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742998449777,
+      "link": null,
+      "locked": false,
+      "text": "- Tips:\n    - Organize your application source code around business-facing interests over organizing it around technical conerns.\n    - ",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "- Tips:\n    - Organize your application source code around business-facing interests over organizing it around technical conerns.\n    - ",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "zK8vAD0VnZCvXtcufc42Z",
+      "type": "rectangle",
+      "x": 370.48105642329904,
+      "y": 1284.6830443373137,
+      "width": 627,
+      "height": 243,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aE",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 533184367,
+      "version": 18,
+      "versionNonce": 1978546831,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742998560820,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "wMGrrBabncEktSMZbtSFn",
+      "type": "text",
+      "x": 1065.481056423299,
+      "y": 1303.6830443373137,
+      "width": 342.07977294921875,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aG",
+      "roundness": null,
+      "seed": 1682690543,
+      "version": 62,
+      "versionNonce": 164987791,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742998653430,
+      "link": null,
+      "locked": false,
+      "text": "\"app\" is the \"shell\" for all the stuff\nin our application.\n\n",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "\"app\" is the \"shell\" for all the stuff\nin our application.\n\n",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "UcVDzmy5i9GV0WHJMQmGY",
+      "type": "text",
+      "x": 419.48105642329904,
+      "y": 1614.6830443373137,
+      "width": 1210.499267578125,
+      "height": 375,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aH",
+      "roundness": null,
+      "seed": 508484079,
+      "version": 957,
+      "versionNonce": 2109384143,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742999897589,
+      "link": null,
+      "locked": false,
+      "text": "Profile - User Profile Stuff\n    - make that a \"feature\" with it's own little world, separate from other features.\n\n- Some \"rules\" you might consider:\n\n- if you are working on story card for a sprint or something, you can change anything in your feature \"folder\"\n- stuff outside of a feature is \"shared\"\n    - so stuff like we install from npm - e.g. import { signalStore } from \"@ngrx/signals\"\n    - HARSH - you are not allowed to change package.json or install new node modules in the same PR as any other commits.\n        - for us this requires \"team approval\"\n\n- stuff that is deliberately \"shared\" across the application should be explicitly shared.\n    - This stuff then has a higher requirement for low-level testing.\n        - it is more general than our use case in a feature.\n   - Any changes to these things have to have accompanying tests.",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Profile - User Profile Stuff\n    - make that a \"feature\" with it's own little world, separate from other features.\n\n- Some \"rules\" you might consider:\n\n- if you are working on story card for a sprint or something, you can change anything in your feature \"folder\"\n- stuff outside of a feature is \"shared\"\n    - so stuff like we install from npm - e.g. import { signalStore } from \"@ngrx/signals\"\n    - HARSH - you are not allowed to change package.json or install new node modules in the same PR as any other commits.\n        - for us this requires \"team approval\"\n\n- stuff that is deliberately \"shared\" across the application should be explicitly shared.\n    - This stuff then has a higher requirement for low-level testing.\n        - it is more general than our use case in a feature.\n   - Any changes to these things have to have accompanying tests.",
       "autoResize": true,
       "lineHeight": 1.25
     }

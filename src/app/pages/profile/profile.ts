@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ThemeComponent } from './components/theme';
-import { CardComponent } from './components/card';
+import { CardComponent } from '@app-shared/components';
 
 @Component({
   selector: 'app-profile',
@@ -9,13 +9,13 @@ import { CardComponent } from './components/card';
   template: `
     <h2 class="text-2xl font-bold">Your Profile</h2>
     <div class="flex gap-4 pt-4">
-      <app-profile-card title="Set Your Theme">
+      <app-card title="Set Your Theme">
         <app-profile-theme />
-      </app-profile-card>
+      </app-card>
 
-      <app-profile-card title="Your Information">
+      <app-card title="Your Information">
         <p>Coming Soon!</p>
-      </app-profile-card>
+      </app-card>
     </div>
   `,
   styles: ``,
