@@ -39,6 +39,10 @@ export class SectionNavComponent {
   links = input.required<NavBarItem[]>();
   sectionName = input.required<string>();
 
+  tacos = input(12, {
+    transform: (value: string | number) =>
+      typeof value === 'string' ? +value : value,
+  });
   omitRouterOutlet = input(false, {
     transform: (value: string | boolean) =>
       typeof value === 'string' ? false : value,
