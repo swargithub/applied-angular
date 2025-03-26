@@ -1,29 +1,20 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  signal,
-  resource,
-} from '@angular/core';
-import { ApiLinks } from '../types';
+import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CardComponent } from '@app-shared/components';
+import { LinksDataService } from '../services/links-data';
 
 @Component({
   selector: 'app-links-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CardComponent],
+  imports: [AsyncPipe, CardComponent],
   template: `
-    @if (links.isLoading()) {
-      <p>
-        Hold on, getting your links! (insert cute animated loading gif here)
-      </p>
-    } @else {
-      @for (link of links.value(); track link.id) {
-        <app-card [title]="link.title">
-          <p>Description: {{ link.description }}</p>
-        </app-card>
-      } @empty {
-        <p>Sorry, you have no links!</p>
-      }
+    @let links = listOfLinks$ | async;
+    @for (link of links; track link.id) {
+      <app-card [title]="link.title">
+        <p>Description: {{ link.description }}</p>
+      </app-card>
+    } @empty {
+      <p>Sorry, you have no links!</p>
     }
   `,
   styles: ``,
@@ -31,10 +22,19 @@ import { CardComponent } from '@app-shared/components';
 export class ListComponent {
   //   links = signal<ApiLinks>([]);
 
-  links = resource({
-    loader: () =>
-      fetch('https://some-service.com/api/links').then((r) => {
-        return r.json() as unknown as ApiLinks;
-      }),
-  });
+  service = inject(LinksDataService);
+
+  listOfLinks$ = this.service.getLinks();
+
+  //   links = resource({
+  //     loader: () =>
+  //       fetch('https://some-service.com/api/links').then((r) => {
+  //         return r.json() as unknown as ApiLinks;
+  //       }),
+  //   });
+
+  constructor() {
+    // bad code - will fix
+    // this.listOfLinks$.subscribe((l) => console.log(l));
+  }
 }
