@@ -1,20 +1,23 @@
-import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { CardComponent } from '@app-shared/components';
 import { LinksDataService } from '../services/links-data';
 
 @Component({
   selector: 'app-links-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AsyncPipe, CardComponent],
+  imports: [CardComponent],
   template: `
-    @let links = listOfLinks$ | async;
-    @for (link of links; track link.id) {
-      <app-card [title]="link.title">
-        <p>Description: {{ link.description }}</p>
-      </app-card>
-    } @empty {
-      <p>Sorry, you have no links!</p>
+    @if (listOfLinks()) {
+      @for (link of listOfLinks(); track link.id) {
+        <app-card [title]="link.title">
+          <p>Description: {{ link.description }}</p>
+        </app-card>
+      } @empty {
+        <p>Sorry, you have no links!</p>
+      }
+    } @else {
+      <p>Nothing yet..</p>
     }
   `,
   styles: ``,
@@ -24,7 +27,7 @@ export class ListComponent {
 
   service = inject(LinksDataService);
 
-  listOfLinks$ = this.service.getLinks();
+  listOfLinks = toSignal(this.service.getLinks());
 
   //   links = resource({
   //     loader: () =>
