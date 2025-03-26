@@ -8,12 +8,16 @@ export const COUNTER_ROUTES: Routes = [
     component: CounterComponent,
     children: [
       {
-        path: 'ui',
+        path: 'ui', // counter/ui
         component: UiComponent,
       },
       {
         path: 'prefs',
         component: PrefsComponent,
+      },
+      {
+        path: '**',
+        redirectTo: 'ui',
       },
     ],
   },

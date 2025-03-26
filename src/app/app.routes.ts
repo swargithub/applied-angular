@@ -6,6 +6,7 @@ import { ProfileComponent } from './pages/profile/profile';
 // these are "modes" we can put our application in.
 
 export const routes: Routes = [
+  // relative to app-component
   {
     path: 'dashboard',
     component: DashboardComponent,

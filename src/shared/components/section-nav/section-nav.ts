@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 export type NavBarItem = {
   href: string;
   label: string;
@@ -8,7 +8,7 @@ export type NavBarItem = {
 @Component({
   selector: 'app-section-nav',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, RouterOutlet],
   template: `
     <div class="navbar bg-base-300 shadow-sm my-8">
       <a routerLink="." class="btn btn-ghost text-xl">{{ sectionName() }}</a>
@@ -25,10 +25,22 @@ export type NavBarItem = {
         }
       </ul>
     </div>
+    <ng-content></ng-content>
+
+    @if (omitRouterOutlet() !== false) {
+      <div>
+        <router-outlet />
+      </div>
+    }
   `,
   styles: ``,
 })
 export class SectionNavComponent {
   links = input.required<NavBarItem[]>();
   sectionName = input.required<string>();
+
+  omitRouterOutlet = input(false, {
+    transform: (value: string | boolean) =>
+      typeof value === 'string' ? false : value,
+  });
 }

@@ -6,15 +6,9 @@ import { SectionNavComponent } from '../../../shared/components/section-nav/sect
 @Component({
   selector: 'app-counter-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, RouterLink, SectionNavComponent],
+  imports: [SectionNavComponent],
   providers: [CounterStore],
-  template: `
-    <app-section-nav sectionName="Counter Lab" [links]="links()" />
-
-    <div>
-      <router-outlet />
-    </div>
-  `,
+  template: ` <app-section-nav sectionName="Counter Lab" [links]="links()" /> `,
   styles: ``,
 })
 export class CounterComponent {
