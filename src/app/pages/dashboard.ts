@@ -11,6 +11,7 @@ import { SectionNavComponent } from '@app-shared/components/';
 
 @Component({
   selector: 'app-dashboard-page',
+  providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TitleCasePipe, SectionNavComponent],
   template: `
