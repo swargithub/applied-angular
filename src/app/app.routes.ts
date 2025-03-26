@@ -1,7 +1,6 @@
 import { Route, Routes } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard';
 import { AboutComponent } from './pages/about';
-import { ProfileComponent } from './pages/profile/profile';
+import { DashboardComponent } from './pages/dashboard';
 
 // these are "modes" we can put our application in.
 const p: Route = {};
@@ -14,6 +13,11 @@ export const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+  },
+  {
+    path: 'links',
+    loadChildren: () =>
+      import('./features/links/links.routes').then((m) => m.LINKS_ROUTES),
   },
   {
     path: 'demos',

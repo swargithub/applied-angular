@@ -37,6 +37,10 @@ export class NavBarComponent {
       label: 'Demos',
     },
     {
+      href: 'links',
+      label: 'Developer Resources',
+    },
+    {
       href: 'counter',
       label: 'Counter Lab',
     },
