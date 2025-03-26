@@ -23,10 +23,11 @@ import { ButtonDirective } from '@app-shared/directives';
     } @else {
       <p>Click the buttons!</p>
     }
-
-    <div class="p-4">
-      <app-odd-even-indicator [current]="current()" />
-    </div>
+    @defer {
+      <div class="p-4">
+        <app-odd-even-indicator [current]="current()" />
+      </div>
+    }
   `,
   styles: ``,
 })
