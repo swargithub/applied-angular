@@ -8,7 +8,7 @@ import { SectionNavComponent } from '../../../shared/components/section-nav/sect
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ThemeComponent, CardComponent, SectionNavComponent],
   template: `
-    <app-section-nav sectionName="Profile" [links]="[]">
+    <app-section-nav sectionName="Profile" [links]="[]" omitRouterOutlet>
       <div class="flex gap-4 pt-4">
         <app-card title="Set Your Theme">
           <app-profile-theme />

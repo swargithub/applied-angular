@@ -14,12 +14,7 @@ import { SectionNavComponent } from '@app-shared/components/';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [TitleCasePipe, SectionNavComponent],
   template: `
-    <app-section-nav
-      [links]="[]"
-      sectionName="Dashboard"
-      omitRouterOutlet
-      tacos="99"
-    >
+    <app-section-nav [links]="[]" sectionName="Dashboard" omitRouterOutlet>
       <p>Welcome, {{ nameService.name() }}!</p>
 
       <p>You are currently using {{ prefsStore.theme() | titlecase }} Theme</p>

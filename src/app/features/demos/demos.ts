@@ -1,21 +1,18 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { NameService } from './services/name';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { SectionNavComponent } from '../../../shared/components/section-nav/section-nav';
 
 @Component({
   selector: 'app-demos-feature',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  // providers: [NameService],
-  imports: [RouterOutlet, RouterLink],
+  imports: [SectionNavComponent],
   template: `
-    <div class="flex gap-4">
-      <a class="btn btn-primary" routerLink="signals">Signals</a>
-      <a class="btn btn-primary" routerLink="services">Services</a>
-    </div>
-    <div class="pt-4">
-      <router-outlet />
-    </div>
+    <app-section-nav sectionName="Demos From Teacher" [links]="links()" />
   `,
   styles: ``,
 })
-export class DemosComponent {}
+export class DemosComponent {
+  links = input([
+    { href: 'signals', label: 'Signals (Counter 101)' },
+    { href: 'services', label: 'Services Demo' },
+  ]);
+}

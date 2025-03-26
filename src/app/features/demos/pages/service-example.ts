@@ -8,20 +8,23 @@ import {
 import { NameDisplayComponent } from '../components/name-display';
 import { NameEntryComponent } from '../components/name-entry';
 import { NameService } from '../services/name';
+import { CardComponent } from '@app-shared/components';
 
 @Component({
   selector: 'app-service-examples',
   changeDetection: ChangeDetectionStrategy.OnPush,
 
-  imports: [NameDisplayComponent, NameEntryComponent],
+  imports: [NameDisplayComponent, NameEntryComponent, CardComponent],
   template: `
     <p>Service examples</p>
     <p>Your name is {{ howLong() }} letters long!</p>
-    <div>
-      <app-name-display />
-    </div>
-    <div>
-      <app-name-entry />
+    <div class="flex gap-4">
+      <app-card title="Display Your Name">
+        <app-name-display />
+      </app-card>
+      <app-card title="Enter Your Name">
+        <app-name-entry />
+      </app-card>
     </div>
   `,
   styles: ``,

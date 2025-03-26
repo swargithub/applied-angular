@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 export type NavBarItem = {
   href: string;
@@ -27,7 +32,7 @@ export type NavBarItem = {
     </div>
     <ng-content></ng-content>
 
-    @if (omitRouterOutlet() !== false) {
+    @if (showRouterOutlet()) {
       <div>
         <router-outlet />
       </div>
@@ -39,12 +44,10 @@ export class SectionNavComponent {
   links = input.required<NavBarItem[]>();
   sectionName = input.required<string>();
 
-  tacos = input(12, {
-    transform: (value: string | number) =>
-      typeof value === 'string' ? +value : value,
-  });
   omitRouterOutlet = input(false, {
     transform: (value: string | boolean) =>
       typeof value === 'string' ? false : value,
   });
+
+  showRouterOutlet = computed(() => !this.omitRouterOutlet());
 }
