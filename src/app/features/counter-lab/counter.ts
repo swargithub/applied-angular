@@ -1,7 +1,6 @@
-import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { CounterStore } from './services/counter-store';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { SectionNavComponent } from '../../../shared/components/section-nav/section-nav';
+import { CounterStore } from './services/counter-store';
 
 @Component({
   selector: 'app-counter-page',
