@@ -25,7 +25,7 @@ import { LinksDataService } from '../services/links-data';
           <a
             [routerLink]="[]"
             [queryParams]="{ tag }"
-            [class.btn-success]="filteringBy() === tag"
+            [routerLinkActive]="['btn-primary']"
             [class.btn-ghost]="
               filteringBy() !== tag && filteringBy() !== undefined
             "
@@ -41,7 +41,12 @@ import { LinksDataService } from '../services/links-data';
             <p class="text-accent">{{ link.description }}</p>
             <div class="flex flex-row gap-4">
               @for (tag of link.tags; track tag) {
-                <span class="badge badge-primary">{{ tag }}</span>
+                <a
+                  [routerLink]="[]"
+                  [queryParams]="{ tag }"
+                  class="badge badge-primary"
+                  >{{ tag }}</a
+                >
               }
             </div>
           </app-card>
