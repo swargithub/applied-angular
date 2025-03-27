@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CardComponent } from '@app-shared/components';
 import { LinksDataService } from '../services/links-data';
@@ -9,6 +14,11 @@ import { LinksDataService } from '../services/links-data';
   imports: [CardComponent],
   template: `
     @if (listOfLinks()) {
+      <div class="flex flex-row flex-wrap gap-2">
+        @for (tag of uniqueTags(); track tag) {
+          <a class="btn ">{{ tag }}</a>
+        }
+      </div>
       <div class="flex flex-row flex-wrap gap-4">
         @for (link of listOfLinks(); track link.id) {
           <app-card [title]="link.title">
@@ -36,15 +46,14 @@ export class ListComponent {
 
   listOfLinks = toSignal(this.service.getLinks());
 
-  //   links = resource({
-  //     loader: () =>
-  //       fetch('https://some-service.com/api/links').then((r) => {
-  //         return r.json() as unknown as ApiLinks;
-  //       }),
-  //   });
+  // a computed signal that gives me all the unique tags from the listOfLinks
+  uniqueTags = computed(() => {
+    const links = this.listOfLinks();
+    if (!links) return [];
+    const tags = links
+      .flatMap((link) => link.tags) // take a bunch of links [{... tags?: []}] and give me [... tags]
+      .filter(Boolean); // take out anything that doesn't match this predicate ()
 
-  constructor() {
-    // bad code - will fix
-    // this.listOfLinks$.subscribe((l) => console.log(l));
-  }
+    return [...new Set(tags)];
+  });
 }

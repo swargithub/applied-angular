@@ -16,11 +16,20 @@ import { ButtonDirective } from '@app-shared/directives';
         intent="secondary"
         [disabled]="store.decrementShouldBeDisabled()"
         (click)="store.decrement()"
+        aria-label="Decrement counter"
       >
         -
       </button>
-      <span>{{ store.current() }}</span>
-      <button class="m-4" (click)="store.increment()" appButton round>+</button>
+      <span aria-live="polite">{{ store.current() }}</span>
+      <button
+        class="m-4"
+        (click)="store.increment()"
+        appButton
+        round
+        aria-label="Increment counter"
+      >
+        +
+      </button>
     </div>
 
     <app-fizzbuzz />
