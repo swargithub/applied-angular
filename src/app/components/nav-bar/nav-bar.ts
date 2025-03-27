@@ -41,6 +41,10 @@ export class NavBarComponent {
       label: 'Developer Resources',
     },
     {
+      label: 'Books Lab',
+      href: 'books',
+    },
+    {
       href: 'counter',
       label: 'Counter Lab',
     },

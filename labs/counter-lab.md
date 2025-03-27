@@ -1,5 +1,7 @@
 # Counter
 
+Heres a video https://vimeo.com/1031643852?share=copy#t=0
+
 Getting used to signals, routing, etc.
 
 You may end up needing a service.
@@ -9,6 +11,9 @@ You may end up needing a service.
 ### Feature Component
 
 Create a new folder in `src/app/features` called `counter-lab`.
+
+> NOTE: If you are doing this again, first, awesome, secondly, create a different name for the feature - e.g. `counter-lab-final`, and adapt
+> accordingly.
 
 Create an Angular component in that folder called `counter.component.ts`.
 
