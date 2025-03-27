@@ -9,13 +9,20 @@ import { LinksDataService } from '../services/links-data';
   imports: [CardComponent],
   template: `
     @if (listOfLinks()) {
-      @for (link of listOfLinks(); track link.id) {
-        <app-card [title]="link.title">
-          <p>Description: {{ link.description }}</p>
-        </app-card>
-      } @empty {
-        <p>Sorry, you have no links!</p>
-      }
+      <div class="flex flex-row flex-wrap gap-4">
+        @for (link of listOfLinks(); track link.id) {
+          <app-card [title]="link.title">
+            <p class="text-accent">{{ link.description }}</p>
+            <div class="flex flex-row gap-4">
+              @for (tag of link.tags; track tag) {
+                <span class="badge badge-primary">{{ tag }}</span>
+              }
+            </div>
+          </app-card>
+        } @empty {
+          <p>Sorry, you have no links!</p>
+        }
+      </div>
     } @else {
       <p>Nothing yet..</p>
     }
