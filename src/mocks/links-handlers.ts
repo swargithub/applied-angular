@@ -95,7 +95,7 @@ const fakeLinks: ApiLink[] = [
 
 export const LinkHandlers = [
   http.get('https://some-service.com/api/links', async () => {
-    await delay(); // about 100ms - 200ms (to simulate network latency)
+    await delay(1000); // about 100ms - 200ms (to simulate network latency)
     return HttpResponse.json(fakeLinks);
   }),
   http.get('https://some-service.com/api/links/:id', async ({ params }) => {

@@ -1,56 +1,52 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  viewChild,
+  Component,
   ElementRef,
-  OnInit,
   inject,
+  input,
+  OnInit,
   signal,
-  effect,
+  viewChild,
 } from '@angular/core';
-import { LinksDataService } from '../services/links-data';
+import { Location } from '@angular/common';
+import { LinksStore } from '../services/links-store';
 import { ApiLink } from '../types';
-import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-link-details',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
   template: `
-    <h3 class="text-lg font-bold">{{ link()?.title }}</h3>
-    <div #detailsModal class="modal">
-      <div class="modal-box">
-        @if (link()) {
-          <h3 class="text-lg font-bold">{{ link()?.title }}</h3>
-          <p>{{ link()?.description }}</p>
+    <dialog #detailsModal class="modal">
+      @if (store.selectedLink()) {
+        @let link = store.selectedLink()!;
+        <div class="modal-box">
+          <h3 class="text-lg font-bold">{{ link.title }}</h3>
+          <p>{{ link.description }} {{ id() }}</p>
           <div class="modal-action">
-            <form method="dialog">
+            <form method="dialog" (submit)="close()">
               <button type="submit" class="btn btn-primary">Close</button>
             </form>
           </div>
-        }
-      </div>
-    </div>
+        </div>
+      }
+    </dialog>
   `,
   styles: ``,
 })
-export class DetailsComponent {
+export class DetailsComponent implements OnInit {
   id = input.required<string>();
-  service = inject(LinksDataService);
-  link = signal<ApiLink | undefined>(undefined);
+  store = inject(LinksStore);
   modal = viewChild<ElementRef<HTMLDialogElement>>('detailsModal');
 
-  constructor() {
-    effect(() => {
-      const id = this.id();
-      if (this.id()) {
-        this.service
-          .getLink(id)
-
-          .subscribe((r) => this.link.set(r));
-      }
-    });
+  ngOnInit() {
     this.modal()?.nativeElement.showModal();
+    this.store.setSelectedId(this.id());
+  }
+
+  location = inject(Location);
+  close() {
+    this.store.clearSelectedId();
+    this.location.back();
   }
 }

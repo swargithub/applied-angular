@@ -15,6 +15,7 @@ import {
 import { CardComponent } from '@app-shared/components';
 import { map, tap } from 'rxjs';
 import { LinksDataService } from '../services/links-data';
+import { LinksStore } from '../services/links-store';
 
 @Component({
   selector: 'app-links-list',
@@ -80,7 +81,7 @@ import { LinksDataService } from '../services/links-data';
 })
 export class ListComponent {
   #activatedRoute = inject(ActivatedRoute);
-
+  store = inject(LinksStore);
   constructor() {
     this.#activatedRoute.queryParamMap
       .pipe(
@@ -93,7 +94,7 @@ export class ListComponent {
   service = inject(LinksDataService);
   filteringBy = signal<string | undefined | null>(undefined);
 
-  listOfLinks = toSignal(this.service.getLinks());
+  listOfLinks = this.store.entities;
 
   // a computed signal that gives me all the unique tags from the listOfLinks
   uniqueTags = computed(() => {
