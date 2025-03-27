@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { DetailsComponent } from './components/details';
 import { ListComponent } from './components/list';
 import { LinksComponent } from './links';
+import { ReadingListComponent } from './components/reading-list';
 export const LINKS_ROUTES: Routes = [
   {
     path: '',
@@ -17,6 +18,10 @@ export const LINKS_ROUTES: Routes = [
             component: DetailsComponent,
           },
         ],
+      },
+      {
+        path: 'reading-list',
+        component: ReadingListComponent,
       },
       {
         path: '**',

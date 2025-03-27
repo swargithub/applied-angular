@@ -14,9 +14,11 @@ import { LinksDataService } from './links-data';
 import { interval, switchMap, tap } from 'rxjs';
 import { withDevtools } from '@angular-architects/ngrx-toolkit';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { withReadingList } from './reading-list-store-feature';
 
 export const LinksStore = signalStore(
   withEntities<ApiLink>(),
+  withReadingList(),
   withDevtools('links'),
   withState({
     selectedId: undefined as string | undefined,
@@ -48,6 +50,20 @@ export const LinksStore = signalStore(
         if (!id) return undefined;
         return store.entities().find((link) => link.id === id);
       }),
+      readingList: computed(() => {
+        const readingList = store.readingListEntities();
+        const links = store.entities();
+        if (!links) return [];
+        if (!readingList) return [];
+        return readingList.map((item) => {
+          const link = links.find((link) => link.id === item.titleId);
+          if (!link) return undefined;
+          return {
+            ...item,
+            ...link,
+          };
+        });
+      }),
     };
   }),
   withHooks({
@@ -55,7 +71,7 @@ export const LinksStore = signalStore(
       console.log('The LinksStore has been initialized');
       store.loadLinks();
 
-      interval(3000)
+      interval(1000 * 60 * 5)
         .pipe(
           takeUntilDestroyed(),
           tap(() => store.loadLinks()),

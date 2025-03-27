@@ -16,6 +16,10 @@ import { LinksDataService } from './services/links-data';
           label: 'List',
           href: '/links/list',
         },
+        {
+          label: 'Reading List',
+          href: '/links/reading-list',
+        },
       ]"
     >
       <div class="h-4 w-full">
