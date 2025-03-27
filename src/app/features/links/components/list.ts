@@ -6,7 +6,12 @@ import {
   signal,
 } from '@angular/core';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  ActivatedRoute,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
 import { CardComponent } from '@app-shared/components';
 import { map, tap } from 'rxjs';
 import { LinksDataService } from '../services/links-data';
@@ -14,9 +19,10 @@ import { LinksDataService } from '../services/links-data';
 @Component({
   selector: 'app-links-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CardComponent, RouterLink, RouterLinkActive],
+  imports: [CardComponent, RouterLink, RouterLinkActive, RouterOutlet],
   template: `
     @if (listOfLinks()) {
+      <router-outlet />
       <div class="flex flex-row flex-wrap gap-2">
         @if (filteringBy()) {
           <a [routerLink]="[]" [queryParams]="{}" class="btn"> Show All </a>
@@ -48,6 +54,18 @@ import { LinksDataService } from '../services/links-data';
                   >{{ tag }}</a
                 >
               }
+            </div>
+            <div class="flex flex-row gap-4">
+              <a
+                target="_blank"
+                [href]="link.url"
+                class="btn btn-primary"
+                [title]="link.url"
+                >Visit Link</a
+              >
+              <a [routerLink]="[link.id]" class="btn btn-primary"
+                >See Details</a
+              >
             </div>
           </app-card>
         } @empty {
