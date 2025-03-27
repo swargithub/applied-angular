@@ -5,33 +5,34 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { CardComponent } from '@app-shared/components';
+import { map, tap } from 'rxjs';
 import { LinksDataService } from '../services/links-data';
 
 @Component({
   selector: 'app-links-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CardComponent],
+  imports: [CardComponent, RouterLink, RouterLinkActive],
   template: `
     @if (listOfLinks()) {
       <div class="flex flex-row flex-wrap gap-2">
         @if (filteringBy()) {
-          <button (click)="filteringBy.set(undefined)" class="btn">
-            Show All
-          </button>
+          <a [routerLink]="[]" [queryParams]="{}" class="btn"> Show All </a>
         }
         @for (tag of uniqueTags(); track tag) {
-          <button
+          <a
+            [routerLink]="[]"
+            [queryParams]="{ tag }"
             [class.btn-success]="filteringBy() === tag"
             [class.btn-ghost]="
               filteringBy() !== tag && filteringBy() !== undefined
             "
-            (click)="filteringBy.set(tag)"
             class="btn"
           >
             {{ tag }}
-          </button>
+          </a>
         }
       </div>
       <div class="flex flex-row flex-wrap gap-4">
@@ -55,10 +56,19 @@ import { LinksDataService } from '../services/links-data';
   styles: ``,
 })
 export class ListComponent {
-  //   links = signal<ApiLinks>([]);
+  #activatedRoute = inject(ActivatedRoute);
 
+  constructor() {
+    this.#activatedRoute.queryParamMap
+      .pipe(
+        map((params) => params.get('tag')),
+        tap((tag) => this.filteringBy.set(tag)),
+        takeUntilDestroyed(), // this is super cool. can eliminate a lot of janky code.
+      )
+      .subscribe();
+  }
   service = inject(LinksDataService);
-  filteringBy = signal<string | undefined>(undefined);
+  filteringBy = signal<string | undefined | null>(undefined);
 
   listOfLinks = toSignal(this.service.getLinks());
 
