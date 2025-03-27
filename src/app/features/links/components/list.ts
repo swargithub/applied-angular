@@ -3,6 +3,7 @@ import {
   Component,
   computed,
   inject,
+  signal,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CardComponent } from '@app-shared/components';
@@ -15,12 +16,26 @@ import { LinksDataService } from '../services/links-data';
   template: `
     @if (listOfLinks()) {
       <div class="flex flex-row flex-wrap gap-2">
+        @if (filteringBy()) {
+          <button (click)="filteringBy.set(undefined)" class="btn">
+            Show All
+          </button>
+        }
         @for (tag of uniqueTags(); track tag) {
-          <a class="btn ">{{ tag }}</a>
+          <button
+            [class.btn-success]="filteringBy() === tag"
+            [class.btn-ghost]="
+              filteringBy() !== tag && filteringBy() !== undefined
+            "
+            (click)="filteringBy.set(tag)"
+            class="btn"
+          >
+            {{ tag }}
+          </button>
         }
       </div>
       <div class="flex flex-row flex-wrap gap-4">
-        @for (link of listOfLinks(); track link.id) {
+        @for (link of filteredLinks(); track link.id) {
           <app-card [title]="link.title">
             <p class="text-accent">{{ link.description }}</p>
             <div class="flex flex-row gap-4">
@@ -43,6 +58,7 @@ export class ListComponent {
   //   links = signal<ApiLinks>([]);
 
   service = inject(LinksDataService);
+  filteringBy = signal<string | undefined>(undefined);
 
   listOfLinks = toSignal(this.service.getLinks());
 
@@ -50,10 +66,17 @@ export class ListComponent {
   uniqueTags = computed(() => {
     const links = this.listOfLinks();
     if (!links) return [];
-    const tags = links
+    const tags = [...links]
       .flatMap((link) => link.tags) // take a bunch of links [{... tags?: []}] and give me [... tags]
       .filter(Boolean); // take out anything that doesn't match this predicate ()
 
-    return [...new Set(tags)];
+    return Array.from(new Set(tags));
+  });
+
+  filteredLinks = computed(() => {
+    const links = this.listOfLinks();
+    const filter = this.filteringBy();
+    if (!links || !filter) return links;
+    return links.filter((link) => link.tags?.includes(filter));
   });
 }
