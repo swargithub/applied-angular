@@ -98,4 +98,15 @@ export const LinkHandlers = [
     await delay(); // about 100ms - 200ms (to simulate network latency)
     return HttpResponse.json(fakeLinks);
   }),
+  http.get('https://some-service.com/api/links/:id', async ({ params }) => {
+    await delay(); // about 100ms - 200ms (to simulate network latency)
+    const id = params['id'] as string;
+    if (id) {
+      const link = fakeLinks.find((link) => link.id === id);
+      if (link) {
+        return HttpResponse.json(link);
+      }
+    }
+    return new HttpResponse('not found', { status: 404 });
+  }),
 ];

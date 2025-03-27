@@ -5,33 +5,52 @@ import {
   viewChild,
   ElementRef,
   OnInit,
+  inject,
+  signal,
+  effect,
 } from '@angular/core';
+import { LinksDataService } from '../services/links-data';
+import { ApiLink } from '../types';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-link-details',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
   template: `
-    <dialog #detailsModal class="modal">
+    <h3 class="text-lg font-bold">{{ link()?.title }}</h3>
+    <div #detailsModal class="modal">
       <div class="modal-box">
-        <h3 class="text-lg font-bold">TITLE GOES HERE</h3>
-        <p>DESCRIPTION GOES HERE</p>
-        <div class="modal-action">
-          <form method="dialog">
-            <button type="submit" class="btn btn-primary">Close</button>
-          </form>
-        </div>
+        @if (link()) {
+          <h3 class="text-lg font-bold">{{ link()?.title }}</h3>
+          <p>{{ link()?.description }}</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <button type="submit" class="btn btn-primary">Close</button>
+            </form>
+          </div>
+        }
       </div>
-    </dialog>
+    </div>
   `,
   styles: ``,
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent {
   id = input.required<string>();
-
+  service = inject(LinksDataService);
+  link = signal<ApiLink | undefined>(undefined);
   modal = viewChild<ElementRef<HTMLDialogElement>>('detailsModal');
 
-  ngOnInit() {
+  constructor() {
+    effect(() => {
+      const id = this.id();
+      if (this.id()) {
+        this.service
+          .getLink(id)
+
+          .subscribe((r) => this.link.set(r));
+      }
+    });
     this.modal()?.nativeElement.showModal();
   }
 }
