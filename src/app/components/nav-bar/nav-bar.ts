@@ -46,7 +46,7 @@ export class NavBarComponent {
     },
     {
       href: 'counter',
-      label: 'Counter Lab',
+      label: 'Counter Lab Final',
     },
   ]);
 }

@@ -36,13 +36,8 @@ export const routes: Routes = [
   },
   {
     path: 'counter',
-    data: {
-      preload: true,
-    },
     loadChildren: () =>
-      // load children says two things (by default) - put everything this points to in another javascript file.
-      // Also, don't download it until they need it.
-      import('./features/counter-lab/counter.routes').then(
+      import('./features/counter-lab-final/counter.routes').then(
         (r) => r.COUNTER_ROUTES,
       ),
   },
